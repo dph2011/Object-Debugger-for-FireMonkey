@@ -1,0 +1,122 @@
+object Form5: TForm5
+  Left = 0
+  Top = 0
+  Caption = 'FireMonkey Object Debugger Demo'
+  ClientHeight = 646
+  ClientWidth = 556
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object Edit1: TEdit
+    Hint = 'Use the inspector to alter the '#39'Text'#39' property.'
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 1
+    Position.X = 16.000000000000000000
+    Position.Y = 205.000000000000000000
+    Size.Width = 524.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object ComboBox1: TComboBox
+    Hint = 'A TComboBox object'
+    Anchors = [akLeft, akTop, akRight]
+    Items.Strings = (
+      'Item 0'
+      'Item 1'
+      'Item 2'
+      'Item 3'
+      'Item 4'
+      'Item 5')
+    ItemIndex = 4
+    Position.X = 16.000000000000000000
+    Position.Y = 384.000000000000000000
+    Size.Width = 524.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object ListBox1: TListBox
+    Hint = 'A TListBox object'
+    Anchors = [akLeft, akTop, akRight]
+    Position.X = 16.000000000000000000
+    Position.Y = 240.000000000000000000
+    Size.Width = 524.000000000000000000
+    Size.Height = 129.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    DisableFocusEffect = True
+    Items.Strings = (
+      'Item 0'
+      'Item 1'
+      'Item 2'
+      'Item 3')
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    ParentShowHint = False
+    ShowHint = True
+    Viewport.Width = 520.000000000000000000
+    Viewport.Height = 125.000000000000000000
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      
+        'You can use object debugger panel (to the right) to do the follo' +
+        'wing:'
+      ''
+      '        choose the edit field and change its Text property;'
+      ''
+      '        change the cursor;'
+      ''
+      '        change the position of a control;'
+      ''
+      
+        '        choose the listbox or combobox and add modify its conten' +
+        't (the Items property) or change its selected item (ItemIndex);'
+      ''
+      '        change the form'#39's caption.'
+      '')
+    ReadOnly = True
+    TextSettings.WordWrap = True
+    Anchors = [akLeft, akTop, akRight]
+    Position.X = 16.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 524.000000000000000000
+    Size.Height = 185.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Viewport.Width = 504.000000000000000000
+    Viewport.Height = 181.000000000000000000
+  end
+  object ColorPanel1: TColorPanel
+    Hint = 'A TColorPanel object'
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Color = claWhite
+    Position.X = 16.000000000000000000
+    Position.Y = 456.000000000000000000
+    Size.Width = 524.000000000000000000
+    Size.Height = 182.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+  end
+  object ComboColorBox1: TComboColorBox
+    Hint = 'A TComboColorBox object'
+    Anchors = [akLeft, akTop, akRight]
+    Color = claSteelblue
+    Position.X = 16.000000000000000000
+    Position.Y = 424.000000000000000000
+    Size.Width = 524.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+  end
+end

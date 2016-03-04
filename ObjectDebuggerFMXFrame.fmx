@@ -1,0 +1,293 @@
+object FMXObjectDebuggerFrame: TFMXObjectDebuggerFrame
+  Size.Width = 350.000000000000000000
+  Size.Height = 640.000000000000000000
+  Size.PlatformDefault = False
+  OnMouseDown = FrameMouseDown
+  object Panel1: TPanel
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Size.Width = 350.000000000000000000
+    Size.Height = 640.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    OnMouseDown = FrameMouseDown
+    object cbForms: TComboBox
+      Anchors = [akLeft, akTop, akRight]
+      Position.X = 16.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 318.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnChange = cbFormsChange
+    end
+    object cbComps: TComboBox
+      Anchors = [akLeft, akTop, akRight]
+      Position.X = 16.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 318.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      OnChange = cbCompsChange
+    end
+    object TabControl1: TTabControl
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Position.X = 16.000000000000000000
+      Position.Y = 88.000000000000000000
+      Size.Width = 318.000000000000000000
+      Size.Height = 537.000000000000000000
+      Size.PlatformDefault = False
+      TabHeight = 26.000000000000000000
+      TabIndex = 0
+      TabOrder = 5
+      TabPosition = PlatformDefault
+      object TabItemProperties: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = True
+        Size.Width = 74.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Properties'
+        ExplicitSize.cx = 50.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
+        object ListSet: TListView
+          ItemAppearanceClassName = 'TListItemAppearance'
+          ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+          HeaderAppearanceClassName = 'TListHeaderObjects'
+          FooterAppearanceClassName = 'TListHeaderObjects'
+          EditMode = True
+          Position.X = 128.000000000000000000
+          Position.Y = 88.000000000000000000
+          TabOrder = 7
+          OnExit = RefreshOnExit
+          ItemAppearance.ItemHeight = 22
+          ItemAppearance.ItemEditHeight = 22
+          ItemAppearance.HeaderHeight = 1
+          ItemAppearance.FooterHeight = 1
+          OnClick = ListSetClick
+          NativeOptions = [Styled]
+        end
+        object EditNum: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 4
+          Position.X = 40.000000000000000000
+          OnChange = EditChange
+          OnKeyDown = EditNumKeyDown
+          OnExit = EditNumExit
+        end
+        object EditCh: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 5
+          Position.X = 16.000000000000000000
+          OnChange = EditChange
+          OnExit = EditChExit
+        end
+        object EditStr: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 6
+          Position.X = 24.000000000000000000
+          OnChange = EditChange
+          OnExit = EditStrExit
+        end
+        object ComboEnum: TComboEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 3
+          ItemHeight = 19.000000000000000000
+          ItemIndex = -1
+          Position.X = 40.000000000000000000
+          OnChange = ComboEnumChange
+          OnDblClick = ComboEnumDblClick
+          OnExit = RefreshOnExit
+        end
+        object ComboCursor: TComboEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          ItemHeight = 19.000000000000000000
+          ItemIndex = -1
+          OnChange = ComboCursorChange
+          OnExit = RefreshOnExit
+        end
+        object ComboColor: TComboEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 2
+          ItemHeight = 19.000000000000000000
+          ItemIndex = -1
+          Position.X = 56.000000000000000000
+          OnChange = ComboColorChange
+          OnDblClick = ComboColorDblClick
+          OnExit = RefreshOnExit
+        end
+        object sgProp: TStringGrid
+          OnTap = sgPropTap
+          Align = Client
+          Size.Width = 318.000000000000000000
+          Size.Height = 511.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          OnResize = sgPropResize
+          OnDblClick = sgPropDblClick
+          OnViewportPositionChange = sgPropViewportPositionChange
+          Options = [ColumnResize, ColLines, RowLines, Tabs, Header, HeaderClick]
+          RowCount = 100
+          RowHeight = 21.000000000000000000
+          OnHeaderClick = sgPropHeaderClick
+          OnSelectCell = sgPropSelectCell
+          Viewport.Width = 298.000000000000000000
+          Viewport.Height = 486.000000000000000000
+          object StringColumn1: TStringColumn
+            Size.Width = 145.000000000000000000
+            Size.Height = 504.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+          end
+          object StringColumn2: TStringColumn
+            Position.X = 145.000000000000000000
+            Size.Width = 145.000000000000000000
+            Size.Height = 504.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+          end
+        end
+      end
+      object TabItemEvents: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 54.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Events'
+        ExplicitSize.cx = 50.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
+        object sgEvt: TStringGrid
+          Align = Client
+          Size.Width = 50.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          OnResize = sgResize
+          Options = [ColumnResize, ColLines, RowLines, Tabs, Header, HeaderClick]
+          RowCount = 20
+          RowHeight = 21.000000000000000000
+          OnHeaderClick = sgEvtHeaderClick
+          OnSelectCell = sgPropSelectCell
+          Viewport.Width = 314.000000000000000000
+          Viewport.Height = 486.000000000000000000
+          object StringColumn3: TStringColumn
+            Size.Width = 145.000000000000000000
+            Size.Height = 63.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+          end
+          object StringColumn5: TStringColumn
+            Position.X = 145.000000000000000000
+            Size.Width = 145.000000000000000000
+            Size.Height = 420.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+          end
+        end
+      end
+      object TabItemData: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 44.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Data'
+        ExplicitSize.cx = 50.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
+        object sgData: TStringGrid
+          Align = Client
+          Size.Width = 50.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          OnResize = sgResize
+          Options = [ColumnResize, ColLines, RowLines, Tabs, Header, HeaderClick]
+          RowCount = 20
+          RowHeight = 21.000000000000000000
+          OnHeaderClick = sgDataHeaderClick
+          OnSelectCell = sgDataSelectCell
+          Viewport.Width = 314.000000000000000000
+          Viewport.Height = 486.000000000000000000
+          object StringColumn4: TStringColumn
+            Size.Width = 145.000000000000000000
+            Size.Height = 63.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+          end
+          object StringColumn6: TStringColumn
+            Position.X = 145.000000000000000000
+            Size.Width = 145.000000000000000000
+            Size.Height = 420.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+          end
+        end
+      end
+    end
+    object Timer1: TTimer
+      Interval = 2000
+      OnTimer = Timer1Timer
+      Left = 272
+      Top = 16
+    end
+    object PopupMenu1: TPopupMenu
+      Left = 304
+      Top = 16
+      object MenuItem1: TMenuItem
+        Text = 'Options'
+        object MenuItem9: TMenuItem
+          Locked = True
+          Text = 'Refresh Forms'
+          OnClick = MenuItemRefreshFormsClick
+        end
+        object MenuItem12: TMenuItem
+          Locked = True
+          Text = 'Refresh Components'
+          OnClick = MenuItemRefreshComponentsClick
+        end
+        object MenuItem13: TMenuItem
+          Locked = True
+          Text = 'Refresh Values'
+          OnClick = MenuItemRefreshValuesClick
+        end
+        object MenuItem14: TMenuItem
+          Locked = True
+          Text = '-'
+        end
+        object MenuItemVisible: TMenuItem
+          Locked = True
+          IsChecked = True
+          Text = 'Visible'
+          OnClick = MenuItemVisibleClick
+        end
+      end
+      object MenuItem2: TMenuItem
+        Text = 'Help'
+        object MenuItem16: TMenuItem
+          Locked = True
+          Text = 'Info...'
+          OnClick = MenuItemInfoClick
+        end
+        object MenuItem17: TMenuItem
+          Locked = True
+          Text = 'About...'
+          OnClick = MenuItemAboutClick
+        end
+      end
+    end
+  end
+end

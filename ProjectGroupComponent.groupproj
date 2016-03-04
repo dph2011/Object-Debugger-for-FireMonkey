@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BFB0EB71-E91E-4436-B776-0D4058DF4BD8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DemoDesktop\DemoDesktop.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DemoMobile\DemoMobile.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Test\ObjectDebuggerFMXTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DemoDesktop">
+        <MSBuild Projects="DemoDesktop\DemoDesktop.dproj"/>
+    </Target>
+    <Target Name="DemoDesktop:Clean">
+        <MSBuild Projects="DemoDesktop\DemoDesktop.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DemoDesktop:Make">
+        <MSBuild Projects="DemoDesktop\DemoDesktop.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DemoMobile">
+        <MSBuild Projects="DemoMobile\DemoMobile.dproj"/>
+    </Target>
+    <Target Name="DemoMobile:Clean">
+        <MSBuild Projects="DemoMobile\DemoMobile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DemoMobile:Make">
+        <MSBuild Projects="DemoMobile\DemoMobile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ObjectDebuggerFMXTest">
+        <MSBuild Projects="Test\ObjectDebuggerFMXTest.dproj"/>
+    </Target>
+    <Target Name="ObjectDebuggerFMXTest:Clean">
+        <MSBuild Projects="Test\ObjectDebuggerFMXTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ObjectDebuggerFMXTest:Make">
+        <MSBuild Projects="Test\ObjectDebuggerFMXTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DemoDesktop;DemoMobile;ObjectDebuggerFMXTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DemoDesktop:Clean;DemoMobile:Clean;ObjectDebuggerFMXTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DemoDesktop:Make;DemoMobile:Make;ObjectDebuggerFMXTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

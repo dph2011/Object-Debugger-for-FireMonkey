@@ -1,0 +1,58 @@
+object ObjectDebuggerFMXForm: TObjectDebuggerFMXForm
+  Left = 0
+  Top = 0
+  Caption = 'FireMonkey Object Debugger'
+  ClientHeight = 480
+  ClientWidth = 350
+  Position = Designed
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  inline TFMXObjectDebuggerFrame1: TFMXObjectDebuggerFrame
+    Align = MostRight
+    Size.Width = 350.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    inherited Panel1: TPanel
+      Size.Height = 480.000000000000000000
+      inherited TabControl1: TTabControl
+        Size.Height = 377.000000000000000000
+        inherited TabItemProperties: TTabItem
+          Size.Width = 74.000000000000000000
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+          inherited sgProp: TStringGrid
+            Size.Height = 351.000000000000000000
+            Viewport.Width = 298.000000000000000000
+            Viewport.Height = 326.000000000000000000
+            inherited StringColumn1: TStringColumn
+              Size.Height = 336.000000000000000000
+            end
+            inherited StringColumn2: TStringColumn
+              Size.Height = 336.000000000000000000
+            end
+          end
+        end
+        inherited TabItemEvents: TTabItem
+          Size.Width = 54.000000000000000000
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+          inherited sgEvt: TStringGrid
+            Viewport.Width = 314.000000000000000000
+            Viewport.Height = 486.000000000000000000
+          end
+        end
+        inherited TabItemData: TTabItem
+          Size.Width = 44.000000000000000000
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+          inherited sgData: TStringGrid
+            Viewport.Width = 314.000000000000000000
+            Viewport.Height = 486.000000000000000000
+          end
+        end
+      end
+    end
+  end
+end

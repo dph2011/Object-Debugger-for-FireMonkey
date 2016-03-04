@@ -1,0 +1,161 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'FireMonkey Object Debugger Demo'
+  ClientHeight = 646
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Edit1: TEdit
+    Hint = 'Use the inspector to alter the '#39'Text'#39' property.'
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 1
+    Position.X = 8.000000000000000000
+    Position.Y = 205.000000000000000000
+    Size.Width = 273.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object ComboBox1: TComboBox
+    Hint = 'A TComboBox object'
+    Anchors = [akLeft, akTop, akRight]
+    Items.Strings = (
+      'Item 0'
+      'Item 1'
+      'Item 2'
+      'Item 3'
+      'Item 4'
+      'Item 5')
+    ItemIndex = 4
+    Position.X = 8.000000000000000000
+    Position.Y = 384.000000000000000000
+    Size.Width = 273.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    ParentShowHint = False
+    ShowHint = True
+  end
+  object ListBox1: TListBox
+    Hint = 'A TListBox object'
+    Anchors = [akLeft, akTop, akRight]
+    Position.X = 8.000000000000000000
+    Position.Y = 240.000000000000000000
+    Size.Width = 273.000000000000000000
+    Size.Height = 129.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    DisableFocusEffect = True
+    ItemIndex = 2
+    Items.Strings = (
+      'Item 0'
+      'Item 1'
+      'Item 2'
+      'Item 3')
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    ParentShowHint = False
+    ShowHint = True
+    Viewport.Width = 269.000000000000000000
+    Viewport.Height = 125.000000000000000000
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      
+        'You can use object debugger panel (to the right) to do the follo' +
+        'wing:'
+      ''
+      '        choose the edit field and change its Text property;'
+      ''
+      '        change the cursor;'
+      ''
+      '        change the position of a control;'
+      ''
+      
+        '        choose the listbox or combobox and add modify its conten' +
+        't (the Items property) or change its selected item (ItemIndex);'
+      ''
+      '        change the form'#39's caption.'
+      '')
+    ReadOnly = True
+    TextSettings.WordWrap = True
+    Anchors = [akLeft, akTop, akRight]
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 273.000000000000000000
+    Size.Height = 185.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Viewport.Width = 253.000000000000000000
+    Viewport.Height = 181.000000000000000000
+  end
+  object ColorPanel1: TColorPanel
+    Hint = 'A TColorPanel object'
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Color = claWhite
+    Position.X = 8.000000000000000000
+    Position.Y = 456.000000000000000000
+    Size.Width = 273.000000000000000000
+    Size.Height = 182.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+  end
+  object ComboColorBox1: TComboColorBox
+    Hint = 'A TComboColorBox object'
+    Anchors = [akLeft, akTop, akRight]
+    Color = claSteelblue
+    Position.X = 8.000000000000000000
+    Position.Y = 424.000000000000000000
+    Size.Width = 273.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+  end
+  inline TFMXObjectDebuggerFrame1: TFMXObjectDebuggerFrame
+    Align = MostRight
+    Position.X = 290.000000000000000000
+    Size.Width = 350.000000000000000000
+    Size.Height = 646.000000000000000000
+    Size.PlatformDefault = False
+    inherited Panel1: TPanel
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Size.Height = 646.000000000000000000
+      inherited TabControl1: TTabControl
+        Size.Height = 543.000000000000000000
+        inherited TabItemProperties: TTabItem
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+          inherited sgProp: TStringGrid
+            Size.Height = 517.000000000000000000
+            Viewport.Width = 298.000000000000000000
+            Viewport.Height = 492.000000000000000000
+          end
+        end
+        inherited TabItemEvents: TTabItem
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+          inherited sgEvt: TStringGrid
+            Viewport.Width = 314.000000000000000000
+            Viewport.Height = 486.000000000000000000
+          end
+        end
+        inherited TabItemData: TTabItem
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 26.000000000000000000
+          inherited sgData: TStringGrid
+            Viewport.Width = 314.000000000000000000
+            Viewport.Height = 486.000000000000000000
+          end
+        end
+      end
+    end
+  end
+end
