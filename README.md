@@ -19,9 +19,12 @@ WHAT'S HERE
 
 The projects included in this project group are:
 
+
 DemoMobile - A simple demo program that uses the component.  This shows how you might use the component in an Android or iOS app though it will also run on Windows and Mac OS X.
 (Run this first on Win32 to make sure there are no problems.)
+
 DemoDesktop - Similar to DemoMobile but intended for Windows and Mac because the Object Inspector runs in its own form.
+
 ObjectDebuggerFMXTest - If you intend to modify the component, this project is a simple way of building and running the ObjectDebuggerFMXFrame class directly
 in an app (this is a way of avoiding any install/uninstall issues that may come up while changing the code).
 
@@ -29,14 +32,18 @@ in an app (this is a way of avoiding any install/uninstall issues that may come 
 INSTRUCTIONS
 
 1) To build open the project group in Delphi.
+
 2) Open ObjectDebuggerFMXFrame in Design Mode.  In the Structure pane, right-click on FMXObjectDebuggerFrame and select Add to Palette.
 The Component Template Information dialog appears.
 Accept the defaults (TFMXObjectDebuggerFrameTemplate for Component Name and Templates for Palette Page.
+
 3) Select the Demo project and Target Platform on which you intend to run (e.g., Win32 or OX X).
+
 4) Some simple examples of what you can do when running the Demo application:
         choose the edit field and change its Text property using the inspector;
         change the cursor;
         choose the listbox or combobox and add modify its content (the Items property) or change its selected item (ItemIndex).
+        
 5) When adding it to your own project, remember to also add the FormMessage.pas file to the project.
 
 
@@ -56,8 +63,10 @@ adding a routine for reading bytes as a "ShortString" and converting it to a str
 2) Besides using FireMonkey, the chief UI difference is that the main component is a TFrame instead of a TForm.
 This gives more flexibility, especially if one intends to use this in a mobile app (in which more than one form may not be visible).
 More specifically, if the form you want to inspect belongs to:
+
         a) an iOS or Android app:
         you will want to add this frame directly to that form; otherwise, you have no clear way to see both the form and the ObjectDebugger at the same time;
+        
         b) a Windows or Mac desktop app:
         you will probably prefer to put the ObjectDebugger frame in its own window so as not to change the layout of the form.
 
