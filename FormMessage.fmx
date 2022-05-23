@@ -4,7 +4,7 @@ object MessageForm: TMessageForm
   BorderStyle = Single
   Caption = 'Form3'
   ClientHeight = 400
-  ClientWidth = 350
+  ClientWidth = 352
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]

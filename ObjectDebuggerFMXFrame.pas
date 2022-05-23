@@ -950,7 +950,7 @@ begin
   sgObjects := GetStringGridObjects(sg);
 
   //get the data and show it in the first line
-  ppInfo := PPropInfo(sgObjects[0, ARow]);
+  ppInfo := PPropInfo(sgObjects[0, ARow]); //TODO: can throw Range Check Error
   if (ppInfo = nil) then
     Exit;
 
@@ -1767,6 +1767,8 @@ begin
 
   // Replacement for ShowMessage below also lets us set the caption.
   MessageForm.ShowMessage(Lines.Text, 'RTTI Details for ' + GetTypeName(pti));
+
+  FreeAndNil(Lines); //change by birbilis to avoid memory leak (untested)
 end;
 
 {$IFDEF OLD}  // Code snippets that had something useful or that may need to be revisited.
