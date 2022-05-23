@@ -63,8 +63,8 @@ begin
   P := TPanel.Create(Self);
   try
     //middle of the screen
-    Self.Left := Screen.Width div 2 - 125;
-    Self.Top := Screen.Height div 2 - 150;
+    Self.Left := round(Screen.Width / 2 - 125);
+    Self.Top := round(Screen.Height / 2 - 150);
     Self.caption := caption;
 
     AddPanel(P);

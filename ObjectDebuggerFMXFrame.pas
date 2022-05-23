@@ -94,7 +94,7 @@ uses
   System.Rtti, FMX.Grid, FMX.Layouts, FMX.TabControl, FMX.Menus //
     , FMX.Controls.Presentation, FMX.Edit, FMX.ComboEdit,
   FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
-  FMX.ListView, FMX.ScrollBox, FMX.Ani, FMX.Memo, System.Actions, FMX.ActnList //
+  FMX.ListView, FMX.ScrollBox, FMX.Ani, FMX.Memo, FMX.Grid.Style, System.Actions, FMX.ActnList //
     , FMX.StdCtrls // TPanel
     , System.TypInfo //TPropList, PPropInfo
     ;
@@ -219,9 +219,13 @@ type
     procedure PlaceControl(Ctrl: TControl; sg: TStringGrid; ACol, ARow: Integer);
     procedure PlaceControlAgain;
     procedure Initialize;
+
   public
     {Public declarations}
     constructor Create(AOwner: TComponent); override;
+    property ClientWidth: Single read GetWidth; //TODO: return something else?
+    property ClientHeight: Single read GetHeight; //TODO: return something else?
+  
   published
     property Copyright: string read FCopyright;
     property Anchors; // Make Anchors property visible.
@@ -233,7 +237,6 @@ var
 implementation
 
 {$R *.fmx}
-
 
 uses
   System.Math // IntPower
@@ -883,11 +886,11 @@ begin
 
   Result.Bottom := Result.Top + sg.RowHeight;
 
-  if Result.Bottom > sg.ClientHeight then
+  if Result.Bottom > sg.{Client}Height then //TODO: commented out "Client" to compile, use other?
   begin
     // This may cause problems with display if user scrolls after selecting cell, but still an improvement over not doing it.
     // Need to add event to check for this condition after scrolling.
-    Result.Bottom := sg.ClientHeight;
+    Result.Bottom := sg.{Client}Height; //TODO: commented out "Client" to compile, use other?
   end;
 
   //Log.d('(' + FloatToStr(Result.Left) + ', ' + FloatToStr(Result.Top) + ') x (' + FloatToStr(Result.Right) + ', ' +  FloatToStr(Result.Bottom) + ')');
@@ -947,7 +950,7 @@ begin
   sgObjects := GetStringGridObjects(sg);
 
   //get the data and show it in the first line
-  ppInfo := PPropInfo(sgObjects[0, ARow]);
+  ppInfo := PPropInfo(sgObjects[0, ARow]); //TODO: can throw Range Check Error
   if (ppInfo = nil) then
     Exit;
 
@@ -1090,8 +1093,8 @@ begin
   P := TPanel.Create(F);
   try
     //middle of the screen
-    F.Left := Screen.Width div 2 - 125;
-    F.Top := Screen.Height div 2 - 150;
+    F.Left := round(Screen.Width / 2 - 125);
+    F.Top := round(Screen.Height / 2 - 150);
     F.Caption := 'StringList Editor for ' + GetPropName(CurrProp);
 
     (F as TMessageForm).AddPanel(P);
@@ -1764,6 +1767,8 @@ begin
 
   // Replacement for ShowMessage below also lets us set the caption.
   MessageForm.ShowMessage(Lines.Text, 'RTTI Details for ' + GetTypeName(pti));
+
+  FreeAndNil(Lines); //change by birbilis to avoid memory leak (untested)
 end;
 
 {$IFDEF OLD}  // Code snippets that had something useful or that may need to be revisited.
